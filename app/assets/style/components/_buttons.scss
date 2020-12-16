@@ -1,0 +1,96 @@
+.btn {
+  display: inline-block;
+  font-weight: $btn-font-weight;
+  text-align: center;
+  text-decoration: none;
+  border-radius: $btn-border-radius;
+  line-height: $btn-line-height;
+  padding: $btn-padding;
+  font-size: $btn-font-size;
+  transition: $btn-transition;
+  cursor: pointer;
+  @include pad {
+    padding: $btn-md-padding;
+    font-size: $btn-md-font-size;
+  }
+  @include desktop-s {
+    padding: $btn-lg-padding;
+    font-size: $btn-lg-font-size;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:disabled, &.disabled {
+    box-shadow: none;
+    opacity: $btn-disabled-opacity;
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+// btn colors
+@each $key, $value in $theme-colors {
+  .btn--#{$key} {
+    background-color: $value;
+    border: $btn-border-width solid $value;
+    color: color-lightness-match($value);
+    &:hover, &:active {
+      background-color: darken($value, 15%);
+    }
+    &:focus {
+      box-shadow: 0 0 0 0.2rem rgba($value, 0.5);
+    }
+    &:disabled, &.disabled {
+      &:hover, &:active {
+        background-color: $value;
+      }
+      &:focus {
+        box-shadow: none;
+      }
+    }
+  }
+  .btn--outline--#{$key} {
+    border-color: $value;
+    color: $value;
+    border: $btn-border-width solid $value;
+    &:hover, &:focus {
+      background-color: $value;
+      color: color-lightness-match($value);
+    }
+  }
+}
+
+.btn--sm {
+  padding: $btn-padding-sm;
+  font-size: $btn-font-size-sm;
+  line-height: $btn-line-height-sm;
+  border-radius: $btn-border-radius-sm;
+  @include pad {
+    padding: $btn-md-padding-sm;
+    font-size: $btn-md-font-size-sm;
+  }
+  @include desktop-s {
+    padding: $btn-lg-padding-sm;
+    font-size: $btn-lg-font-size-sm;
+  }
+}
+
+.btn--lg {
+  padding: $btn-padding-lg;
+  font-size: $btn-font-size-lg;
+  line-height: $btn-line-height-lg;
+  border-radius: $btn-border-radius-lg;
+  @include pad {
+    padding: $btn-md-padding-lg;
+    font-size: $btn-md-font-size-lg;
+  }
+  @include desktop-s {
+    padding: $btn-lg-padding-lg;
+    font-size: $btn-lg-font-size-lg;
+  }
+}
+
+.btn--block {
+  display: block;
+  width: 100%;
+}

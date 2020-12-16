@@ -1,0 +1,54 @@
+.footer {
+  &__link {
+    color: $white;
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+    img:hover {
+      transform: scale(1.1);
+    }
+  }
+  &__contact-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    @include pad {
+      width: 1.75rem;
+      height: 1.5rem;
+    }
+    @include desktop-s {
+      width: 2.75rem;
+      height: 2.5rem;
+    }
+  }
+  &__social-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    @include desktop-s {
+      height: 3rem;
+      width: 3rem;
+    }
+  }
+  &__logo {
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @include pad {
+      display: none;
+    }
+    @include desktop-s {
+      display: block;
+      position: relative;
+      margin-right: 2.5rem;
+    }
+    img {
+      width: 2.875rem;
+      height: 1.75rem;
+      @include desktop-s {
+        width: 5rem;
+        height: 3rem;
+      }
+    }
+  }
+}

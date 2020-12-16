@@ -1,0 +1,88 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $pagination-font-size;
+    @include pad {
+      font-size: $pagination-md-font-size;
+    }
+    @include desktop-s {
+      font-size: $pagination-lg-font-size;
+    }
+  &__item {
+    &:first-child > .pagination__link {
+      border-left: 1px solid $pagination-border-color;
+    }
+    &.disabled > a {
+      pointer-events: none;
+      color: $pagination-disabled-color;
+      pointer-events: none;
+      background-color: $pagination-disabled-bg;
+      border-color: $pagination-disabled-border-color;
+    }
+  }
+  &__item--active > a {
+    background-color: $pagination-active-bg;
+    border-color: $pagination-active-border-color;
+    color: $pagination-active-color;
+    &:hover {
+      background-color: $pagination-active-hover-bg;
+      border-color: $pagination-active-hover-border-color;
+      color: $pagination-active-hover-color;
+    }
+  }
+  &__link {
+    border: $pagination-border-width solid $pagination-border-color;
+    border-left: 0;
+    background-color: $pagination-bg;
+    color: $pagination-color;
+    display: block;
+    padding: $pagination-padding;
+    transition: $pagination-transition;
+    @include pad {
+      padding: $pagination-md-padding;
+    }
+    @include desktop-s {
+      padding: $pagination-lg-padding;
+    }
+    &:hover {
+      color: $pagination-hover-color;
+      background-color: $pagination-hover-bg;
+      border-color: $pagination-hover-border-color;
+    }
+
+    &:focus {
+      color: $pagination-focus-color;
+      background-color: $pagination-focus-bg;
+      outline: $pagination-focus-outline;
+      box-shadow: $pagination-focus-box-shadow;
+    }
+
+  }
+}
+
+.pagination-sm {
+  padding: $pagination-padding-sm;
+  font-size: $pagination-font-size-sm;
+  @include pad {
+    padding: $pagination-md-padding-sm;
+    font-size: $pagination-md-font-size-sm;
+  }
+  @include desktop-s {
+    padding: $pagination-lg-padding-sm;
+    font-size: $pagination-lg-font-size-sm;
+  }
+}
+
+.pagination-lg {
+  padding: $pagination-padding-lg;
+  font-size: $pagination-font-size-lg;
+  @include pad {
+    padding: $pagination-md-padding-lg;
+    font-size: $pagination-md-font-size-lg;
+  }
+  @include desktop-s {
+    padding: $pagination-lg-padding-lg;
+    font-size: $pagination-lg-font-size-lg;
+  }
+}
